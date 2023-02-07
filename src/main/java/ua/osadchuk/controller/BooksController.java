@@ -11,6 +11,7 @@ import ua.osadchuk.services.BooksService;
 import ua.osadchuk.services.PeopleService;
 
 import javax.validation.Valid;
+import java.security.SecureRandom;
 
 @Controller
 @RequestMapping("/books")
@@ -99,5 +100,16 @@ public class BooksController {
     public String assign(@PathVariable("id") int id, @ModelAttribute("person") Person selectedPerson) {
         booksService.assign(id, selectedPerson);
         return "redirect:/books/" + id;
+    }
+
+    @GetMapping("/search")
+    public String searchPage() {
+        return "books/search";
+    }
+
+    @PostMapping("/search")
+    public String makeSearch(Model model, @RequestParam("query") String query) {
+        model.addAttribute("books", booksService.searchByTitle(query));
+        return "books/search";
     }
 }

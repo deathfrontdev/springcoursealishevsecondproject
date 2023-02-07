@@ -76,4 +76,15 @@ public class PeopleController {
         peopleService.delete(id);
         return "redirect:/people";
     }
+
+    @GetMapping("/search")
+    public String searchPage() {
+        return "people/search";
+    }
+
+    @PostMapping("/search")
+    public String makeSearch(Model model, @RequestParam("query") String query) {
+        model.addAttribute("people", peopleService.searchByFullName(query));
+        return "people/search";
+    }
 }

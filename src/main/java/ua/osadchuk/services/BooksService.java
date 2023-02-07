@@ -80,4 +80,8 @@ public class BooksService {
                 }
         );
     }
+
+    public List<Book> searchByTitle(String query) {
+        return booksRepository.findByTitleStartingWith(query);
+    }
 }

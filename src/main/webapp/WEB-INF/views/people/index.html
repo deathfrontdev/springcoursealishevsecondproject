@@ -15,6 +15,12 @@
 <hr/>
 <br>
 
+<form th:method="GET" th:action="@{/people/search}">
+    <input type="submit" value="Search person"/>
+</form>
+
+<br>
+
 <form th:method="GET" th:action="@{/people/new}">
     <input type="submit" value="Add person"/>
 </form>

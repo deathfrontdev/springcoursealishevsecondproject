@@ -61,4 +61,8 @@ public class PeopleService {
             return Collections.emptyList();
         }
     }
+
+    public List<Person> searchByFullName(String query) {
+        return peopleRepository.findByFullNameStartingWith(query);
+    }
 }
