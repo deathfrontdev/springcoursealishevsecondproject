@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Sort</title>
 </head>
 <body>
 
@@ -13,12 +13,6 @@
 
 <br/>
 <hr/>
-<br>
-
-<form th:method="GET" th:action="@{/books/sort}">
-    <input type="submit" value="Sort book"/>
-</form>
-
 <br>
 
 <form th:method="GET" th:action="@{/books/search}">
@@ -33,7 +27,7 @@
 
 <br>
 
-<form th:method="GET" th:action="@{/}">
+<form th:method="GET" th:action="@{/books}">
     <input type="submit" value="Back"/>
 </form>
 

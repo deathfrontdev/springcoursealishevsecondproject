@@ -11,7 +11,6 @@ import ua.osadchuk.services.BooksService;
 import ua.osadchuk.services.PeopleService;
 
 import javax.validation.Valid;
-import java.security.SecureRandom;
 
 @Controller
 @RequestMapping("/books")
@@ -37,6 +36,19 @@ public class BooksController {
             model.addAttribute("books", booksService.findWithPagination(page, booksPerPage, sortByYear));
 
         return "books/index";
+    }
+
+    @GetMapping("/sort")
+    public String sortIndex(Model model, @RequestParam(value = "page", required = false) Integer page,
+                            @RequestParam(value = "books_per_page", required = false) Integer booksPerPage) {
+        boolean sortByYear = true;
+
+        if (page == null || booksPerPage == null)
+            model.addAttribute("books", booksService.findAll(sortByYear));
+        else
+            model.addAttribute("books", booksService.findWithPagination(page, booksPerPage, sortByYear));
+
+        return "books/sort";
     }
 
     @GetMapping("/{id}")

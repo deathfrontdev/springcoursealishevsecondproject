@@ -9,6 +9,7 @@ import ua.osadchuk.models.Book;
 import ua.osadchuk.models.Person;
 import ua.osadchuk.repositories.BooksRepository;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -69,6 +70,7 @@ public class BooksService {
         booksRepository.findById(id).ifPresent(
                 book -> {
                     book.setOwner(null);
+                    book.setTakenAt(null);
                 });
     }
 
@@ -77,6 +79,7 @@ public class BooksService {
         booksRepository.findById(id).ifPresent(
                 book -> {
                     book.setOwner(selectedPerson);
+                    book.setTakenAt(new Date());
                 }
         );
     }

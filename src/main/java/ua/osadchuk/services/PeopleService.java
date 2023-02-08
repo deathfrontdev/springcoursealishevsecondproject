@@ -9,6 +9,7 @@ import ua.osadchuk.models.Person;
 import ua.osadchuk.repositories.PeopleRepository;
 
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,8 +55,16 @@ public class PeopleService {
 
     public List<Book> getBooksByPersonId(int id) {
         Optional<Person> person = peopleRepository.findById(id);
-        Hibernate.initialize(person.get().getBooks());
+
         if (person.isPresent()) {
+            Hibernate.initialize(person.get().getBooks());
+
+            person.get().getBooks().forEach(book -> {
+                long diffInMilliseconds = Math.abs(book.getTakenAt().getTime() - new Date().getTime());
+
+                if (diffInMilliseconds > 864000000)
+                    book.setExpired(true);
+            });
             return person.get().getBooks();
         } else {
             return Collections.emptyList();
