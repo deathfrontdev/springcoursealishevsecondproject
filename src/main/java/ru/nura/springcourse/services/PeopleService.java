@@ -1,12 +1,12 @@
-package ua.osadchuk.services;
+package ru.nura.springcourse.services;
 
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ua.osadchuk.models.Book;
-import ua.osadchuk.models.Person;
-import ua.osadchuk.repositories.PeopleRepository;
+import ru.nura.springcourse.repositories.PeopleRepository;
+import ru.nura.springcourse.models.Book;
+import ru.nura.springcourse.models.Person;
 
 import java.util.Collections;
 import java.util.Date;

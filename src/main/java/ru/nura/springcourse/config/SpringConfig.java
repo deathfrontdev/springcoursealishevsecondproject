@@ -1,4 +1,4 @@
-package ua.osadchuk.config;
+package ru.nura.springcourse.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -25,10 +25,10 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@ComponentScan("ua.osadchuk")
+@ComponentScan("ru.nura.springcourse")
 @PropertySource("classpath:hibernate.properties")
 @EnableTransactionManagement
-@EnableJpaRepositories("ua.osadchuk.repositories")
+@EnableJpaRepositories("ru.nura.springcourse")
 @EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {
 
@@ -94,7 +94,7 @@ public class SpringConfig implements WebMvcConfigurer {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("ua.osadchuk.models");
+        em.setPackagesToScan("ru.nura.springcourse.models");
 
         final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);

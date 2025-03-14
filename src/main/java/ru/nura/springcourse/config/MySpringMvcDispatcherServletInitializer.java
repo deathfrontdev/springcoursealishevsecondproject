@@ -1,4 +1,4 @@
-package ua.osadchuk.config;
+package ru.nura.springcourse.config;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.HiddenHttpMethodFilter;

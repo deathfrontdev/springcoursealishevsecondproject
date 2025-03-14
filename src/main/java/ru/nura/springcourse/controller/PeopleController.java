@@ -1,13 +1,13 @@
-package ua.osadchuk.controller;
+package ru.nura.springcourse.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import ua.osadchuk.models.Person;
-import ua.osadchuk.services.PeopleService;
-import ua.osadchuk.util.PersonValidator;
+import ru.nura.springcourse.models.Person;
+import ru.nura.springcourse.services.PeopleService;
+import ru.nura.springcourse.util.PersonValidator;
 
 import javax.validation.Valid;
 

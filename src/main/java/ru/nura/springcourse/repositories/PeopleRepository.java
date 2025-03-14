@@ -1,9 +1,8 @@
-package ua.osadchuk.repositories;
+package ru.nura.springcourse.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ua.osadchuk.models.Book;
-import ua.osadchuk.models.Person;
+import ru.nura.springcourse.models.Person;
 
 import java.util.List;
 import java.util.Optional;

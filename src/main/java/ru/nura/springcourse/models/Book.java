@@ -1,4 +1,4 @@
-package ua.osadchuk.models;
+package ru.nura.springcourse.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
